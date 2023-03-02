@@ -7,19 +7,21 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "build": "turbo run build --parallel",
+    "dev": "turbo run dev --parallel --no-cache",
+    "clean": "turbo run clean --parallel",
+    "lint": "turbo run lint --parallel",
+    "type-check": "turbo type-check --parallel",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
+    "@morphum/eslint-config": "workspace:*",
     "prettier": "latest",
+    "prettier-plugin-tailwindcss": "^0.2.4",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.28.0"
 }

@@ -1,30 +1,47 @@
-## Getting Started
+# Morphum Web Front-end
 
-First, run the development server:
+This project loads up the test-site in an iframe and allows you to customize the look and feel of the site.
 
-```bash
-yarn dev
+This project is generated with [Vite](https://vitejs.dev/).
+
+## Folder structure
+
+```
+scripts
+  └─ scripts that runs in NodeJS environment
+src
+  ├─ components
+  |   ├─ react components that renders HTML elements
+  |   └─ does NOT make network requests
+  ├─ containers
+  |   ├─ react components that renders components
+  |   └─ makes network requests
+  └─ pages
+      ├─ react components that renders a page
+      └─ can make network requests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting Started
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Prerequisites:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. NodeJS v18
+1. pnpm
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To work on the project:
 
-## Learn More
+```
+cd apps/web
+```
 
-To learn more about Next.js, take a look at the following resources:
+To run the project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
+```
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To build the project:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+pnpm build
+```

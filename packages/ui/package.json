@@ -1,19 +1,64 @@
 {
-  "name": "ui",
+  "name": "@morphum/ui",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "./scripts/theme-config.cjs",
+    "./src/languages/en-us.json",
+    "./src/index.css",
+    "./src/theme.ts"
+  ],
   "license": "MIT",
   "scripts": {
-    "lint": "eslint *.ts*"
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint --ext '.js,.jsx,.cjs,.mjs,.ts,.cts,.mts,.tsx,.json' .",
+    "type-check": "tsc --noEmit",
+    "trans-push": "mz-tx-push 'src/**/*.{ts,tsx}' --fail-on-warnings --project=ui",
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
+    "@headlessui/tailwindcss": "^0.1.2",
+    "@morphum/eslint-config": "workspace:*",
+    "@morphum/tsconfig": "workspace:*",
+    "@types/node": "^18.15.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "autoprefixer": "^10.4.13",
+    "classnames": "^2.3.2",
+    "daisyui": "^2.51.3",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-turbo": "latest",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-turbo": "^0.0.9",
+    "eslint-plugin-unicorn": "46.0.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.4",
     "react": "^18.2.0",
-    "tsconfig": "workspace:*",
-    "typescript": "^4.5.2"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@morphum/utils": "workspace:*",
+    "react-icons": "^4.8.0"
   }
 }

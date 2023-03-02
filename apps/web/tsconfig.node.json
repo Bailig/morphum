@@ -1,0 +1,4 @@
+{
+  "extends": "@morphum/tsconfig/node.json",
+  "include": ["vite.config.ts"]
+}
